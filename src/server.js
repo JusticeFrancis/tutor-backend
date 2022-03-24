@@ -14,7 +14,7 @@ app.get('/', function(req,res) {
 app.get('/about', function(req,res) {
     res.sendFile(path.join(__dirname+'/about.html'));
 });
-app.use('/users', usersRouter);
+app.use('/',usersRouter)
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
