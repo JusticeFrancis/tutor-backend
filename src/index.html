@@ -41,7 +41,7 @@
   <script>
       function display(val){
            if(val == 1){
-            $('#show').prepend(
+            $('#show').html(
                 ` 
                 <div class="jumbotron" id="register_user"   style="padding:40px;">
                  <h1><b>URL</b>/users</h1>
@@ -60,7 +60,7 @@
             )
            }
            if(val == 2){
-            $('#show').prepend(
+            $('#show').html(
                 ` 
                 <div class="jumbotron" id="get_all_registered_users"  style="padding:40px;">
                     <h1>/users</h1>

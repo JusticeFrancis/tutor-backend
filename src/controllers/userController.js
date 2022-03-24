@@ -40,6 +40,10 @@ exports.createUser = async  function createUser(req, res){
 
 exports.getAllUsers = async function getAllUsers(req,res) {
     const users = await User.find()
+    if(users.length < 1){
+        res.send('no registered user yet')
+        return
+    }
     try{
       res.status(201).json({users})
       console.log(users)
