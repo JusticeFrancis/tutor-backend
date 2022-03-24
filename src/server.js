@@ -8,6 +8,6 @@ app.get('/', function (req, res) {
     res.send('GET request to homepage')
   })
 
-app.listen(port, () => {
-    console.log(`Now listening on port ${port}`);
+app.listen(process.env.PORT || port, () => {
+    console.log(`Now listening `);
 }); 
