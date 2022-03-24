@@ -1,0 +1,78 @@
+<html>
+<head>
+  <title>Api docs</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div style="margin:100px;">
+   
+<nav class="navbar navbar-inverse navbar-static-top">
+  <div class="container">
+    <a class="navbar-brand" href="/">Tutor Backend</a>
+    <ul class="nav navbar-nav">
+      <li class="active">
+        <a href="/">docs</a>
+      </li>
+      <li>
+        <a href="/about">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+    <div class="jumbotron"  style="padding:40px;">
+      <h1>Hello, dev!</h1>
+      <p>this is api documentation for the <a href="https://liuyangtong.io/ and https://staging.liuyangtong.io/"> main </a> and <a href="https://staging.liuyangtong.io/"> staging </a> website(liuyangtong), quite easy to follow... Any further questions whatsapp developer in about directory for clarifications</p>
+      
+      <p> select an api doc to reference :
+          <a class="btn btn-primary btn-lg m-2"  onclick="display(1)"  role="button">register user</a>
+          <a class="btn btn-primary btn-lg m-2"  onclick="display(2)"  role="button">get all users</a>
+      </p>
+      <p class="text-danger">note : url = https://desolate-hollows-68286.herokuapp.com/</p>
+    </div>
+    <div id="show"></div>
+
+    
+    
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+      function display(val){
+           if(val == 1){
+            $('#show').prepend(
+                ` 
+                <div class="jumbotron" id="register_user"   style="padding:40px;">
+                 <h1><b>URL</b>/users</h1>
+                 <small>"register user to server using this api"</small>
+                 <p>user.create or user.register : send post request to /user with fields : type( <br>
+                     full_name : string, <br>
+                     user_name : string ,<b>[unique]</b> <br>
+                     email : string <b>[unique]</b>, <br>
+                     phone : string <b>[unique]</b>, <br>
+                     ref_code : string , <br>
+                     role : Number <b>[admin 1, agent 2, tutor 3, student 4]</b>,<br>
+                     password : string <br>
+                     )</p>
+                 </div>
+                `
+            )
+           }
+           if(val == 2){
+            $('#show').prepend(
+                ` 
+                <div class="jumbotron" id="get_all_registered_users"  style="padding:40px;">
+                    <h1>/users</h1>
+                    <small>"get all users registered on server using this api"</small>
+                    <p>user.getAll or user.getAll : send get request to /user with fields : type( <br>
+                        none
+                        )</p>
+                </div>
+                `
+            )
+           }
+      }
+  </script>
+</body>
+</html>
