@@ -1,0 +1,24 @@
+{
+  "name": "tutor-backend",
+  "version": "1.0.0",
+  "description": "backend for the project",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run start",
+    "start": "node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JusticeFrancis/tutor-.git"
+  },
+  "author": "liuyangtong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JusticeFrancis/tutor-backend/issues"
+  },
+  "homepage": "https://github.com/JusticeFrancis/tutor-backend#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3"
+  }
+}
