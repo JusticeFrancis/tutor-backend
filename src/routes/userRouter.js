@@ -7,10 +7,7 @@ const url_encoded = bodyParser.urlencoded({extended: false});
 
 
 
-router.post('/user',url_encoded, user_controller.createUser)
-
-  router.get('/', function (req, res) {
-    res.send('GET request to homepage')
-  })
+router.post('/users',url_encoded, user_controller.createUser)
+router.get('/users',user_controller.getAllUsers)
 
 module.exports = router;

@@ -1,5 +1,6 @@
 const User = require('../models/userModel')
 const express = require('express');  
+const { db } = require('../models/userModel');
 
 
 
@@ -35,6 +36,19 @@ exports.createUser = async  function createUser(req, res){
     }
     
 }
+
+
+exports.getAllUsers = async function getAllUsers(req,res) {
+    const users = await User.find()
+    try{
+      res.status(201).json({users})
+      console.log(users)
+    }catch(err){
+      res.status(500).json({message : err.message})
+      console.log(users)
+    }
+}
+
 
 
 
