@@ -29,6 +29,7 @@
       <p> select an api doc to reference :
           <a class="btn btn-primary btn-lg m-2"  onclick="display(1)"  role="button">register user</a>
           <a class="btn btn-primary btn-lg m-2"  onclick="display(2)"  role="button">get all users</a>
+          <a class="btn btn-primary btn-lg m-2"  onclick="display(3)"  role="button">get one user</a>
       </p>
       <p class="text-danger">note : url = https://desolate-hollows-68286.herokuapp.com/</p>
     </div>
@@ -40,6 +41,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
       function display(val){
+          let open_angle ='&#10094';;
+          let closing_angle = '&#10095';
            if(val == 1){
             $('#show').html(
                 ` 
@@ -63,11 +66,22 @@
             $('#show').html(
                 ` 
                 <div class="jumbotron" id="get_all_registered_users"  style="padding:40px;">
-                    <h1>/users</h1>
+                    <h1><b>URL</b>/users</h1>
                     <small>"get all users registered on server using this api"</small>
                     <p>user.getAll or user.getAll : send get request to /user with fields : type( <br>
                         none
                         )</p>
+                </div>
+                `
+            )
+           }
+           if(val == 3){
+            $('#show').html(
+                ` 
+                <div class="jumbotron" id="get_all_registered_users"  style="padding:40px;">
+                    <h1><b>URL</b>/users/`+open_angle+`user_id`+closing_angle+`</h1></h1>
+                    <small>"get one user using id"</small>
+                    <p>user.getUser or user.getUser : send get request to /user/<user_id> </p>
                 </div>
                 `
             )

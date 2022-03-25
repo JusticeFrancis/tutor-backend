@@ -1,6 +1,7 @@
 const User = require('../models/userModel')
 const express = require('express');  
 const { db } = require('../models/userModel');
+const res = require('express/lib/response');
 
 
 
@@ -53,6 +54,29 @@ exports.getAllUsers = async function getAllUsers(req,res) {
     }
 }
 
+exports.getUser = async function getUser(req,res,next){
+    let user 
+    try{
+        user = await User.findById(req.params.id)
+        if(user == null){
+            return res.status(404).json({
+                message : 'user not found'
+            })
+        }
+    }catch(err){
+        console.log(err)
+        return res.status(500).json({message : err.message})
+    }
+
+    res.user = user
+    next()
+}
+
+
+/* exports.updateUser = async function updateUser(req, res) {
+   res.json(req)
+    
+} */
 
 
 
